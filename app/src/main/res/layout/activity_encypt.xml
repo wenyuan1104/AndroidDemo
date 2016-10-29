@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_encypt"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wenyuan.myademo.encrypt.EncyptActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/title_bar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/include">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/but_md5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="MD5加密"/>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/but_md5"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toLeftOf="@+id/but_md5"
+                android:layout_toStartOf="@+id/but_md5"
+                android:ems="10"
+                android:hint="请输入需要加密的数据"
+                android:inputType="textPersonName">
+
+                <EditText
+                    android:id="@+id/edit_md5_in"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:lines="1"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:id="@+id/text_md5_show"
+                style="@style/TextAppearance.AppCompat.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/editText"
+                android:layout_marginTop="8dp"
+                android:text="md5加密后的数据"/>
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/text_md5_show"
+                android:layout_marginBottom="6dp"
+                android:background="@color/colorPrimaryDark"/>
+
+            <TextView
+                android:id="@+id/text_public_key"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/view"
+                android:text="公钥key:"/>
+
+            <TextView
+                android:id="@+id/text_private_key"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_public_key"
+                android:text="私钥key:"/>
+
+            <EditText
+                android:id="@+id/edit_rsa_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/text_private_key"
+                android:layout_toLeftOf="@+id/but_rsa_encode"
+                android:ellipsize="start"
+                android:hint="输入需要使用RSA加密的数据"
+                android:lines="1"/>
+
+            <Button
+                android:id="@+id/but_rsa_encode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/text_private_key"
+                android:text="RSA加密"/>
+
+            <TextView
+                android:id="@+id/text_show_encode"
+                style="@style/TextAppearance.AppCompat.Large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/but_rsa_encode"
+                android:text="RSA加密后的密文"/>
+
+            <Button
+                android:id="@+id/but_rsa_decode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/text_show_encode"
+                android:text="RSA解密"/>
+
+            <TextView
+                android:id="@+id/text_show_rsa_decode"
+                style="@style/TextAppearance.AppCompat.Large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/but_rsa_decode"
+                android:text="RSA解密后的数据"/>
+
+            <View
+                android:id="@+id/view_2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/text_show_rsa_decode"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorPrimaryDark"/>
+
+            <EditText
+                android:id="@+id/edit_rsa_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/text_show_encode"
+                android:layout_toLeftOf="@+id/but_rsa_decode"
+                android:layout_toStartOf="@+id/but_rsa_decode"
+                android:ellipsize="start"
+                android:hint="自动填充Base64加密后的RSA密文"
+                android:lines="1"
+                android:textColorHint="@color/colorPrimary"/>
+
+            <EditText
+                android:id="@+id/edit_base64_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/view_2"
+                android:layout_toLeftOf="@+id/but_base64_encode"
+                android:ellipsize="end"
+                android:hint="输入Base64加密数据"
+                android:lines="1"/>
+
+            <Button
+                android:id="@+id/but_base64_encode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/view_2"
+                android:text="BASE64编码"/>
+
+            <TextView
+                android:id="@+id/text_show_base64_ecode"
+                style="@style/TextAppearance.AppCompat.Large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edit_base64_in"
+                android:text="base64加密后的数据"/>
+
+            <EditText
+                android:id="@+id/edit_base64_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_show_base64_ecode"
+                android:layout_toLeftOf="@+id/but_base64_decode"
+                android:hint="输入base64解密密文"/>
+
+            <Button
+                android:id="@+id/but_base64_decode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/text_show_base64_ecode"
+                android:text="base64译码"/>
+
+            <TextView
+                android:id="@+id/text_show_base64_decode"
+                style="@style/TextAppearance.AppCompat.Large"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/edit_base64_out"
+                android:text="base64解密后的数据"/>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>
