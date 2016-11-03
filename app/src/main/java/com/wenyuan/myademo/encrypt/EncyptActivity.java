@@ -15,6 +15,7 @@ import com.socks.library.KLog;
 import com.wenyuan.myademo.BaseActivity;
 import com.wenyuan.myademo.R;
 import com.wenyuan.myademo.encrypt.utils.RSAUtil;
+import com.wenyuan.myademo.utils.AlertDialogV7Factory;
 
 import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
@@ -43,6 +44,7 @@ public class EncyptActivity extends BaseActivity implements View.OnClickListener
     private TextView mTextShowBase64Decode;
 
     private RSAUtil mRSAUtil;
+    private AlertDialogV7Factory mDialogFactory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,19 +93,36 @@ public class EncyptActivity extends BaseActivity implements View.OnClickListener
         mButBase64Decode.setOnClickListener(this);
         mTextShowBase64Decode = (TextView) findViewById(R.id.text_show_base64_decode);
         mTextShowBase64Decode.setOnClickListener(this);
+        mButRsaDecode.setEnabled(false);
+        mButRsaEncode.setEnabled(false);
     }
 
     @Override
     protected void initData() {
-        mRSAUtil = new RSAUtil();
-        try {
-            mTextPublicKey.append(mRSAUtil.getRSAPublicKey().toString());
-            KLog.d(mRSAUtil.getRSAPublicKey().toString());
-            mTextPrivateKey.append(mRSAUtil.getRSAPrivateKey().toString());
-            KLog.d(mRSAUtil.getRSAPrivateKey().toString());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        mDialogFactory = new AlertDialogV7Factory(mContext);
+        // RSA算法比较耗时
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                mRSAUtil = new RSAUtil();
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            mTextPublicKey.append(mRSAUtil.getRSAPublicKey().toString());
+                            KLog.d(mRSAUtil.getRSAPublicKey().toString());
+                            mTextPrivateKey.append(mRSAUtil.getRSAPrivateKey().toString());
+                            KLog.d(mRSAUtil.getRSAPrivateKey().toString());
+                            mButRsaDecode.setEnabled(true);
+                            mButRsaEncode.setEnabled(true);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+            }
+        }).start();
+
     }
 
     @Override
@@ -117,6 +136,7 @@ public class EncyptActivity extends BaseActivity implements View.OnClickListener
         int id = item.getItemId();
         switch (id) {
             case R.id.action_issue:
+                mDialogFactory.showTextDialog("相关问题", getResources().getString(R.string.issue_encypt), true);
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -225,7 +245,7 @@ public class EncyptActivity extends BaseActivity implements View.OnClickListener
             // 获得公钥
             RSAPublicKey publicKey = mRSAUtil.getRSAPublicKey();
             // 加密
-            byte[] cipherText = mRSAUtil.encrypt(publicKey, data.getBytes());
+            byte[] cipherText = mRSAUtil.encode(publicKey, data.getBytes());
             // 显示 TODO 在经过base64加密后传输 为解决在byte[]和String转换后不相同的问题
             mTextShowEncode.setText("加密后：" + new String(cipherText, "utf-8"));
             mEditRsaOut.setText(Base64.encodeToString(cipherText, Base64.DEFAULT));

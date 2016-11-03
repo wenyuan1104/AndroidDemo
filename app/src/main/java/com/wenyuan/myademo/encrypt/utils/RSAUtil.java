@@ -232,5 +232,18 @@ public class RSAUtil {
         return recoveryPriKey;
     }
 
-
+    /**
+     * 不适用第三方框架加密的不同代码 居然也可以 我只是想了解下加解密是怎么个回事 所以在这里不同的加密加密方式
+     *
+     * @param key
+     * @param data
+     * @return
+     * @throws Exception
+     */
+    public byte[] encode(Key key, byte[] data) throws Exception {
+        Cipher cipher = Cipher.getInstance("RSA");
+        cipher.init(Cipher.ENCRYPT_MODE, key);
+        byte[] cipherText = cipher.doFinal(data);
+        return cipherText;
+    }
 }

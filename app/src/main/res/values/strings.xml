@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">MyAndroidDemo</string>
+    <string name="issue_encypt">
+        【RSA相关问题】:使用RSA加密后得到的byte[]需要传输，所以转换成String。
+        但是由于编码的问题 byte[]和String在互相转换后，前后的byte[]值会不一样。【怎么解决我的天】
+        可以使用Base64二次编码密文的方式取代byte[]、string互相转换的的方式传值。\n\n
+        RSA加密是比较耗时的。
+    </string>
+
+    <string name="issue_camera">
+        “ACTION_IMAGE_CAPTURE_SECURE”它返回照相机拍摄到的图像，设备被固定
+        \n“ACTION_VIDEO_CAPTURE”它调用已有的视频应用程序在Android中捕获视频
+        \n使用ACTION_IMAGE_CAPTURE_SECURE有部分手机在拍照后没有携带照片返回到跳转之前的activity
+        \n\n由于不需要直接操作摄像头，而只是调用存在的APP，所以不需要Camera权限
+    </string>
+
+    <string name="main">多封装\n多加Log\n解析、计算出最好自己加Exception</string>
 </resources>

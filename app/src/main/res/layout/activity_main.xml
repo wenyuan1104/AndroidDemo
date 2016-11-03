@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:id="@+id/activity_main"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -39,6 +38,85 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="硬件设备"/>
+
+                <Button
+                    android:id="@+id/but_animation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="动画"/>
+
+                <Button
+                    android:id="@+id/but_attr_animation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="属性动画"/>
+
+                <Button
+                    android:id="@+id/but_custom_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="自定义视图"/>
+
+                <Button
+                    android:id="@+id/but_event"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="事件机制"/>
+
+                <Button
+                    android:id="@+id/but_material"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="材质设计"/>
+
+                <Button
+                    android:id="@+id/but_statesbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="透明/沉浸式状态栏"/>
+
+                <Button
+                    android:id="@+id/but_thirdparty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="第三方框架"/>
+
+                <Button
+                    android:id="@+id/but_bitmap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="图片处理"
+                    android:textAllCaps="false"/>
+
+                <Button
+                    android:id="@+id/but_version_m"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="6.0动态权限"/>
+
+                <Button
+                    android:id="@+id/but_mvp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MVP"/>
+
+                <Button
+                    android:id="@+id/but_mvvm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MVVM"/>
+
+                <Button
+                    android:id="@+id/but_file"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="存储"/>
+
+                <Button
+                    android:id="@+id/but_web"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="网页交互"/>
             </LinearLayout>
         </android.support.v7.widget.CardView>
     </ScrollView>

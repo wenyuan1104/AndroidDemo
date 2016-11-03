@@ -1,5 +1,6 @@
 package com.wenyuan.myademo;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private final String TAG = this.getClass().getSimpleName();
 
+    protected Context mContext;
     protected Toolbar mToolbar;
     private boolean mIsHomeBut;
 
@@ -26,6 +28,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         KLog.i("onCreate  " + TAG);
         getLayoutResource();
+        this.mContext = this;
         initView();
         initData();
     }
