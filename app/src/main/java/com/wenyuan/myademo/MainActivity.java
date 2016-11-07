@@ -7,6 +7,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.wenyuan.myademo.detail.permission.PermissionActivity;
+import com.wenyuan.myademo.detail.picture.HandlerPicActivity;
 import com.wenyuan.myademo.encrypt.EncyptActivity;
 import com.wenyuan.myademo.hardware.camera.SysCameraActivity;
 import com.wenyuan.myademo.utils.AlertDialogV7Factory;
@@ -25,6 +27,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     private AlertDialogV7Factory mDialogFactory;
     private Button mButBitmap;
+    private Button mButVersionM;
+    private Button mButMvp;
+    private Button mButMvvm;
+    private Button mButFile;
+    private Button mButWeb;
+    private Button mButService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +69,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mButThirdparty.setOnClickListener(this);
         mButBitmap = (Button) findViewById(R.id.but_bitmap);
         mButBitmap.setOnClickListener(this);
+        mButVersionM = (Button) findViewById(R.id.but_version_m);
+        mButVersionM.setOnClickListener(this);
+        mButMvp = (Button) findViewById(R.id.but_mvp);
+        mButMvp.setOnClickListener(this);
+        mButMvvm = (Button) findViewById(R.id.but_mvvm);
+        mButMvvm.setOnClickListener(this);
+        mButFile = (Button) findViewById(R.id.but_file);
+        mButFile.setOnClickListener(this);
+        mButWeb = (Button) findViewById(R.id.but_web);
+        mButWeb.setOnClickListener(this);
+        mButService = (Button) findViewById(R.id.but_service);
+        mButService.setOnClickListener(this);
     }
 
     @Override
@@ -80,6 +100,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         switch (id) {
             case R.id.action_about:
                 mDialogFactory.showTextDialog("建议", getString(R.string.main), true);
+                break;
+            case R.id.action_more:
+                startActivity(MoreActivity.class);
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -110,6 +133,20 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.but_thirdparty:
                 break;
             case R.id.but_bitmap:
+                startActivity(HandlerPicActivity.class);
+                break;
+            case R.id.but_version_m:
+                startActivity(PermissionActivity.class);
+                break;
+            case R.id.but_mvp:
+                break;
+            case R.id.but_mvvm:
+                break;
+            case R.id.but_file:
+                break;
+            case R.id.but_web:
+                break;
+            case R.id.but_service:
                 break;
         }
     }

@@ -28,17 +28,24 @@
 
         <Button
             android:id="@+id/but_camera"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="按下拍照"/>
 
         <Button
             android:id="@+id/but_change"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
             android:text="切换摄像头"/>
+
+        <Button
+            android:id="@+id/but_flash_light"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="切换闪光灯"/>
     </LinearLayout>
 
 </RelativeLayout>

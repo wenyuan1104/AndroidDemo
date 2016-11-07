@@ -12,7 +12,116 @@
         \n“ACTION_VIDEO_CAPTURE”它调用已有的视频应用程序在Android中捕获视频
         \n使用ACTION_IMAGE_CAPTURE_SECURE有部分手机在拍照后没有携带照片返回到跳转之前的activity
         \n\n由于不需要直接操作摄像头，而只是调用存在的APP，所以不需要Camera权限
+        \n\n自定义相机拍照出来的照片需要进行压缩.压缩后照片质量差
+        \n拍照后的照片旋转角度不对,部分手机预览画面颠倒，
     </string>
 
     <string name="main">多封装\n多加Log\n解析、计算出最好自己加Exception</string>
+
+    <string name="permission">跳转设置页面intent.setData(Uri.fromParts("package", context.getPackageName(), null));
+    \n\n6.0以下当checkSelfPermission  不管禁不禁止权限返回的都是0对6.0以下版本不适用\n
+        但是，如果用户关闭了你申请的权限，ActivityCompat.checkSelfPermission(),会导致程序崩溃(java.lang.RuntimeException: Unknown exception code: 1 msg null)，
+        \nSettings.canDrawOverlays(Context) //SYSTEM_ALERT_WINDOW\n
+Settings.System.canWrite(Context) //WRITE_SETTINGS\n
+部分厂商会对ROM做修改比如小米，shouldShowRequestPermissionRationale只要拒绝了 就真的完全拒绝了( ▼-▼ )
+</string>
+    <string name="permission_show">
+        ACCESS_LOCATION_EXTRA_COMMANDS\n
+ACCESS_NETWORK_STATE\n
+ACCESS_NOTIFICATION_POLICY\n
+ACCESS_WIFI_STATE\n
+BLUETOOTH\n
+BLUETOOTH_ADMIN\n
+BROADCAST_STICKY\n
+CHANGE_NETWORK_STATE\n
+CHANGE_WIFI_MULTICAST_STATE\n
+CHANGE_WIFI_STATE\n
+DISABLE_KEYGUARD\n
+EXPAND_STATUS_BAR\n
+GET_PACKAGE_SIZE\n
+INSTALL_SHORTCUT\n
+INTERNET\n
+KILL_BACKGROUND_PROCESSES\n
+MODIFY_AUDIO_SETTINGS\n
+NFC\n
+READ_SYNC_SETTINGS\n
+READ_SYNC_STATS\n
+RECEIVE_BOOT_COMPLETED\n
+REORDER_TASKS\n
+REQUEST_INSTALL_PACKAGES\n
+SET_ALARM\n
+SET_TIME_ZONE\n
+SET_WALLPAPER\n
+SET_WALLPAPER_HINTS\n
+TRANSMIT_IR\n
+UNINSTALL_SHORTCUT\n
+USE_FINGERPRINT\n
+VIBRATE\n
+WAKE_LOCK\n
+WRITE_SYNC_SETTINGS
+        \n\n
+Dangerous Permissions:
+group:android.permission-group.CONTACTS
+  permission:android.permission.WRITE_CONTACTS
+  permission:android.permission.GET_ACCOUNTS
+  permission:android.permission.READ_CONTACTS
+
+group:android.permission-group.PHONE
+  permission:android.permission.READ_CALL_LOG
+  permission:android.permission.READ_PHONE_STATE
+  permission:android.permission.CALL_PHONE
+  permission:android.permission.WRITE_CALL_LOG
+  permission:android.permission.USE_SIP
+  permission:android.permission.PROCESS_OUTGOING_CALLS
+  permission:com.android.voicemail.permission.ADD_VOICEMAIL
+
+group:android.permission-group.CALENDAR
+  permission:android.permission.READ_CALENDAR
+  permission:android.permission.WRITE_CALENDAR
+
+group:android.permission-group.CAMERA
+  permission:android.permission.CAMERA
+
+group:android.permission-group.SENSORS
+  permission:android.permission.BODY_SENSORS
+
+group:android.permission-group.LOCATION
+  permission:android.permission.ACCESS_FINE_LOCATION
+  permission:android.permission.ACCESS_COARSE_LOCATION
+
+group:android.permission-group.STORAGE
+  permission:android.permission.READ_EXTERNAL_STORAGE
+  permission:android.permission.WRITE_EXTERNAL_STORAGE
+
+group:android.permission-group.MICROPHONE
+  permission:android.permission.RECORD_AUDIO
+
+group:android.permission-group.SMS
+  permission:android.permission.READ_SMS
+  permission:android.permission.RECEIVE_WAP_PUSH
+  permission:android.permission.RECEIVE_MMS
+  permission:android.permission.RECEIVE_SMS
+  permission:android.permission.SEND_SMS
+  permission:android.permission.READ_CELL_BROADCASTS</string>
+    
+    <string name="picture_txt">
+        BitmapFactory decode出Bitmap\n
+        Bitmap和Matrix实现图像变换Bitmap.createBitmap()\n
+        保存图像文件Bitmap bitmap;
+        bitmap.compress()\n
+        BitmapFactory.Options:-->\n
+        inJustDecodeBounds\n
+        inSampleSize\n
+        inPurgeable = true;//内存不足时可以回收\n
+        nInputShareable = true;\n
+        inDither = false;    /*不进行图片抖动处理*/\n
+        inPreferredConfig = null;  //设置让解码器以最佳方式解码\n
+    </string>
+
+    <string name="app_more">
+        targetSdkVersion 比如设置小于23，就不会进行动态权限管理\n
+    </string>
+    <string name="title_activity_more">MoreActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>

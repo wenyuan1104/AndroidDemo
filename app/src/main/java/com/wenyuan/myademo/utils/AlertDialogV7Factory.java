@@ -3,6 +3,9 @@ package com.wenyuan.myademo.utils;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
@@ -52,6 +55,32 @@ public class AlertDialogV7Factory {
                 .setNeutralButton("更多", null)
                 .setPositiveButton("OK", null);
 
+        AlertDialog dialog = builder.create();
+        dialog.show();
+        return dialog;
+    }
+
+    /**
+     * 为了显示 缺失和设置 权限的对话框
+     *
+     * @param title
+     * @param content
+     * @param listener
+     */
+    public AlertDialog showForPermissionOfDialog(String title, String content) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(mContext)
+                .setTitle(TextUtils.isEmpty(title) == true ? "" : title)
+                .setMessage(TextUtils.isEmpty(content) == true ? "" : content)
+                .setPositiveButton("设置权限", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent();
+                        intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                        //为什么加这句话 不加的话不能跳转至app详情界面
+                        intent.setData(Uri.fromParts("package", mContext.getPackageName(), null));
+                        mContext.startActivity(intent);
+                    }
+                });
         AlertDialog dialog = builder.create();
         dialog.show();
         return dialog;

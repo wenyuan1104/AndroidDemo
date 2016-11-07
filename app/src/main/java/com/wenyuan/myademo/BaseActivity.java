@@ -2,6 +2,7 @@ package com.wenyuan.myademo;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -22,6 +23,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected Context mContext;
     protected Toolbar mToolbar;
     private boolean mIsHomeBut;
+    protected boolean mIsAndroid_M;//是否是android 6.0
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         KLog.i("onResume  " + TAG);
+        mIsAndroid_M = Build.VERSION.SDK_INT >= Build.VERSION_CODES.M
+                ? true : false;
     }
 
     @Override
@@ -121,8 +125,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @param bundle
      * @param requestCode
      */
-    protected void startActivityForResult(Class<?> cls, Bundle bundle,
-                                          int requestCode) {
+    protected void startActivityForResult(Class<?> cls, Bundle bundle, int requestCode) {
         Intent intent = new Intent();
         intent.setClass(this, cls);
         if (bundle != null) {
