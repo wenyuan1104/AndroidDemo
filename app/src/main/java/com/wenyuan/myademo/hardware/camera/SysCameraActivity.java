@@ -160,7 +160,6 @@ public class SysCameraActivity extends BaseActivity implements View.OnClickListe
                         }
                         mDialogFactory.showForPermissionOfDialog("权限缺失", builder.toString());
                     }
-
                 }
                 break;
             default:
@@ -174,7 +173,6 @@ public class SysCameraActivity extends BaseActivity implements View.OnClickListe
      * ACTION_VIDEO_CAPTURE
      * 它调用已有的视频应用程序在Android中捕获视频
      */
-
     private void invokeSysCamera() {
         //先判断手机中是否存在 拍照App
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
