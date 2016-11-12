@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_anim_alpha"
+        android:title="透明度"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/action_anim_scale"
+        android:title="伸缩"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_anim_rotate"
+        android:title="旋转"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/action_anim_translate"
+        android:title="平移"
+        app:showAsAction="always"/>
+    <group>
+        <item
+            android:id="@+id/action_group_1"
+            android:title="组合动画1"/>
+        <item
+            android:id="@+id/action_group_2"
+            android:title="组合动画2"/>
+        <item
+            android:id="@+id/action_group_3"
+            android:title="组合动画3"/>
+        <item
+            android:id="@+id/action_issue"
+            android:title="issue"/>
+    </group>
+
+</menu>

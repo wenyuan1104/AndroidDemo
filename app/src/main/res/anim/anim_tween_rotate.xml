@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="3000"
+    android:fromDegrees="0"
+    android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+    android:pivotX="20%p"
+    android:pivotY="20%p"
+    android:toDegrees="270"/>
+
+    <!--
+    android:fromDegrees     开始旋转的角度位置，正值代表顺时针方向度数，负值代码逆时针方向度数
+    android:toDegrees       结束时旋转到的角度位置，正值代表顺时针方向度数，负值代码逆时针方向度数
+    android:pivotX          缩放起点X轴坐标，可以是数值、百分数、百分数p 三种样式，比如 50、50%、50%p，
+                            具体意义已在scale标签中讲述，这里就不再重讲
+    android:pivotY          缩放起点Y轴坐标，可以是数值、百分数、百分数p 三种样式，比如 50、50%、50%p-->

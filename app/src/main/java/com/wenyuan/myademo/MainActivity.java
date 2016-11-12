@@ -7,6 +7,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.wenyuan.myademo.animation.PropertyAnimActivity;
+import com.wenyuan.myademo.animation.TweenAnimActivity;
 import com.wenyuan.myademo.detail.permission.PermissionActivity;
 import com.wenyuan.myademo.detail.picture.HandlerPicActivity;
 import com.wenyuan.myademo.encrypt.EncyptActivity;
@@ -18,7 +20,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button mButEncryption;
     private Button mButHardware;
     private Button mButAnimation;
-    private Button mButAttrAnimation;
     private Button mButCustomView;
     private Button mButEvent;
     private Button mButMaterial;
@@ -37,7 +38,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -55,8 +55,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mButHardware.setOnClickListener(this);
         mButAnimation = (Button) findViewById(R.id.but_animation);
         mButAnimation.setOnClickListener(this);
-        mButAttrAnimation = (Button) findViewById(R.id.but_attr_animation);
-        mButAttrAnimation.setOnClickListener(this);
         mButCustomView = (Button) findViewById(R.id.but_custom_view);
         mButCustomView.setOnClickListener(this);
         mButEvent = (Button) findViewById(R.id.but_event);
@@ -119,8 +117,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 selectListForHard();
                 break;
             case R.id.but_animation:
-                break;
-            case R.id.but_attr_animation:
+                selectListForAnimation();
                 break;
             case R.id.but_custom_view:
                 break;
@@ -149,6 +146,26 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.but_service:
                 break;
         }
+    }
+
+    /**
+     *
+     */
+    private void selectListForAnimation() {
+        String[] strings = {"TweenAnimation", "frameAnimation", "LayoutAnimation", "PropertyAnimation", "自定义动画"};
+        mDialogFactory.showSingleListDialog("Animation", true, -1, strings, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                switch (which) {
+                    case 0:
+                        startActivity(TweenAnimActivity.class);
+                        break;
+                    case 3:
+                        startActivity(PropertyAnimActivity.class);
+                        break;
+                }
+            }
+        });
     }
 
     /**

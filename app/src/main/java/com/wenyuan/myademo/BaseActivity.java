@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.socks.library.KLog;
+import com.wenyuan.myademo.utils.AlertDialogV7Factory;
 
 /**
  * Created by www22_000 as wenyuan on 2016/10/9 22:51.
@@ -24,6 +25,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected Toolbar mToolbar;
     private boolean mIsHomeBut;
     protected boolean mIsAndroid_M;//是否是android 6.0
+    protected AlertDialogV7Factory mDialogV7Factory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         this.mContext = this;
         initView();
         initData();
+        mDialogV7Factory = new AlertDialogV7Factory(mContext);
     }
 
     @Override

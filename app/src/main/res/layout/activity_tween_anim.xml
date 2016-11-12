@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_tween_anim"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wenyuan.myademo.animation.TweenAnimActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/title_bar"/>
+
+    <ImageView
+        android:id="@+id/img_for_anim"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_centerInParent="true"
+        android:background="@android:color/darker_gray"
+        android:clickable="true"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/tween_animtion"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/but_for_anim"
+        android:layout_below="@+id/include"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="47dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginTop="82dp"/>
+
+</RelativeLayout>

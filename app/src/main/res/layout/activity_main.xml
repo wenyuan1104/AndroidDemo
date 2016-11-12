@@ -51,12 +51,6 @@
                         android:text="动画"/>
 
                     <Button
-                        android:id="@+id/but_attr_animation"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="属性动画"/>
-
-                    <Button
                         android:id="@+id/but_custom_view"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -135,6 +129,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="布局"/>
+
+                    <Button
+                        android:id="@+id/but_jni"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="jni"/>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 
