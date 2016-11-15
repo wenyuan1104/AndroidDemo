@@ -26,7 +26,7 @@
             android:title="组合动画1"/>
         <item
             android:id="@+id/action_group_2"
-            android:title="组合动画2"/>
+            android:title="组合动画2曲线"/>
         <item
             android:id="@+id/action_group_3"
             android:title="组合动画3"/>

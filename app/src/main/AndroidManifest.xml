@@ -16,14 +16,17 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:launchMode="singleTop">
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme.Placeholder">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".encrypt.EncyptActivity">
+        <activity
+            android:name=".encrypt.EncyptActivity"
+            android:theme="@style/AppTheme">
         </activity>
         <activity
             android:name=".hardware.camera.SysCameraActivity"
@@ -49,6 +52,14 @@
         <activity android:name=".animation.PropertyAnimActivity">
         </activity>
         <activity android:name=".animation.TweenAnimActivity">
+        </activity>
+        <activity android:name=".animation.FrameAnimActivity">
+        </activity>
+        <activity android:name=".animation.ActivityOptionsActivity">
+        </activity>
+        <activity android:name=".layout.LayoutActivity">
+        </activity>
+        <activity android:name=".storage.StorageActivity">
         </activity>
     </application>
 

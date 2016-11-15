@@ -1,9 +1,10 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="BaseAppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
+        <!--状态栏颜色-->
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowActionBar">false</item>
@@ -13,6 +14,23 @@
     <style name="AppTheme" parent="BaseAppTheme">
         <!--修改对话框按钮的颜色-->
         <item name="alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert.Self</item>
+        <!--style中定义全局的activity动画  使用style的方式定义Activity的切换动画好像只能用于5.0以下的版本-->
+        <item name="android:windowAnimationStyle">@style/activityAnim</item>
+        <!-- 允许使用 ActivityOptions  transitions   -->
+        <item name="android:windowContentTransitions" tools:targetApi="lollipop">true</item>
+    </style>
+    <!-- ######################################################################################### -->
+    <!--style中定义全局的activity动画 进场动画 退场动画-->
+    <!--但好像只能用于5.0以下-->
+    <style name="activityAnim">
+        <!--用于设置打开新的Activity并进入新的Activity展示的动画-->
+        <item name="android:activityOpenEnterAnimation">@anim/anim_tween_group_3</item>
+        <!--用于设置打开新的Activity并销毁之前的Activity展示的动画-->
+        <item name="android:activityOpenExitAnimation">@anim/anim_tween_group_2</item>
+        <!--用于设置关闭当前Activity进入上一个Activity展示的动画-->
+        <item name="android:activityCloseEnterAnimation">@anim/anim_tween_group_3</item>
+        <!--用于设置关闭当前Activity时展示的动画-->
+        <item name="android:activityCloseExitAnimation">@anim/anim_tween_group_2</item>
     </style>
 
     <!--修改对话框按钮的颜色-->
@@ -21,6 +39,49 @@
         <item name="colorAccent">@color/colorPrimaryDark</item>
     </style>
 
+    <!--APP启动时解决白屏问题 给activity设置theme-->
+    <style name="AppTheme.Placeholder">
+        <item name="android:windowBackground">@mipmap/start</item>
+        <item name="colorPrimaryDark">@android:color/white</item>
+    </style>
+
+    <!--透明度 透明-->
+    <style name="Theme.AppCompat.Translucent">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    </style>
+    <!-- viewpagerindicator样式开始############################################################## -->
+    <!--viewpagerindicator 样式主题-->
+    <style name="IndicatorTheme" parent="BaseAppTheme">
+        <item name="vpiTabPageIndicatorStyle">@style/MyWidget.TabPageIndicator</item>
+        <item name="android:animationDuration">5000</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="MyWidget.TabPageIndicator" parent="Widget">
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/vpi__tab_indicator</item>
+        <item name="android:paddingLeft">22dip</item>
+        <item name="android:paddingRight">22dip</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textAppearance">@style/MyTextAppearance.TabPageIndicator</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:showDividers">middle</item>
+        <item name="android:fadingEdge">horizontal</item>
+        <item name="android:fadingEdgeLength">8dp</item>
+        <!--<item name="android:dividerHeight"></item>-->
+    </style>
+
+    <style name="MyTextAppearance.TabPageIndicator" parent="Widget">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@drawable/selector_indicator_text_color</item>
+    </style>
+    <!-- viewpagerindicator样式结束############################################################## -->
+    <!---->
     <style name="FullscreenTheme" parent="AppTheme">
         <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
         <item name="android:windowActionBarOverlay">true</item>

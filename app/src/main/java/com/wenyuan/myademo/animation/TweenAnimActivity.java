@@ -42,7 +42,18 @@ import com.wenyuan.myademo.utils.ToastUtils;
  * DecelerateInterpolator===================在动画开始的地方快然后慢。
  * LinearInterpolator======================以常量速率改变。
  * OvershootInterpolator====================向前甩一定值后再回到原来位置。
- * PathInterpolator==============新增的，就是可以定义路径坐标，然后可以按照路径坐标来跑动；注意其坐标并不是 XY，而是单方向，也就是我可以从0~1，然后弹回0.5 然后又弹到0.7 有到0.3，直到最后时间结束。
+ * PathInterpolator==============新增的，就是可以定义路径坐标，然后可以按照路径坐标来跑动；
+ * 注意其坐标并不是 XY，而是单方向，也就是我可以从0~1，然后弹回0.5 然后又弹到0.7 有到0.3，直到最后时间结束。
+ * <p>
+ * 效果	代码中方法	xml中属性
+ * 越来越快	AccelerateInterpolator()	@android:anim/accelerate_interpolator
+ * 越来越慢	DecelerateInterpolator()	@android:anim/decelerate_interpolator
+ * 先快后慢	AccelerateDecelerateInterpolator()	@android:anim/accelerate_decelerate_interpolator
+ * 先后退一小步然后向前加速	AnticipateInterpolator()	@android:anim/anticipate_interpolator
+ * 快速到达终点超出一小步然后回到终点	OvershootInterpolator()	@android:anim/overshoot_interpolator
+ * 到达终点超出一小步然后回到终点	AnticipateOvershootInterpolator()	@android:anim/anticipate_overshoot_interpolator
+ * 弹球效果，弹几下回到终点	BounceInterpolator()	@android:anim/bounce_interpolator
+ * 均匀速度	LinearInterpolator()	@android:anim/linear_interpolator
  */
 public class TweenAnimActivity extends BaseActivity implements Animation.AnimationListener, View.OnClickListener {
 
@@ -101,6 +112,7 @@ public class TweenAnimActivity extends BaseActivity implements Animation.Animati
                 setAnimation1();
                 break;
             case R.id.action_group_2:
+                curveAnimation();
                 break;
             case R.id.action_group_3:
                 break;
@@ -109,6 +121,12 @@ public class TweenAnimActivity extends BaseActivity implements Animation.Animati
                 break;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * 抛物线 动画
+     */
+    private void curveAnimation() {
     }
 
     /**

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wenyuan.myademo.layout.LayoutActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/title_bar"/>
+
+    <RelativeLayout
+        android:id="@+id/relative_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rad_group"
+        android:layout_below="@id/include">
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/relative_content"
+        android:background="@android:color/darker_gray"/>
+
+    <RadioGroup
+        android:paddingTop="3dp"
+        android:id="@+id/rad_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rad_but_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/ic_account_balance_black_24dp"
+            android:gravity="center"
+            android:text="首页"/>
+
+        <RadioButton
+            android:id="@+id/rad_but_redian"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/ic_add_a_photo_black_24dp"
+            android:gravity="center"
+            android:text="热点"/>
+
+        <RadioButton
+            android:id="@+id/rad_but_user"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/ic_account_box_black_24dp"
+            android:gravity="center"
+            android:text="用户"/>
+    </RadioGroup>
+
+</RelativeLayout>

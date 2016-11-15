@@ -18,92 +18,95 @@
 
     <string name="main">多封装\n多加Log\n解析、计算出最好自己加Exception</string>
 
-    <string name="permission">跳转设置页面intent.setData(Uri.fromParts("package", context.getPackageName(), null));
-    \n\n6.0以下当checkSelfPermission  不管禁不禁止权限返回的都是0对6.0以下版本不适用\n
-        但是，如果用户关闭了你申请的权限，ActivityCompat.checkSelfPermission(),会导致程序崩溃(java.lang.RuntimeException: Unknown exception code: 1 msg null)，
+    <string name="permission">跳转设置页面intent.setData(Uri.fromParts("package",
+        context.getPackageName(), null));
+        \n\n6.0以下当checkSelfPermission 不管禁不禁止权限返回的都是0对6.0以下版本不适用\n
+        但是，如果用户关闭了你申请的权限，ActivityCompat.checkSelfPermission(),会导致程序崩溃(java.lang.RuntimeException:
+        Unknown exception code: 1 msg null)，
         \nSettings.canDrawOverlays(Context) //SYSTEM_ALERT_WINDOW\n
-Settings.System.canWrite(Context) //WRITE_SETTINGS\n
-部分厂商会对ROM做修改比如小米，shouldShowRequestPermissionRationale只要拒绝了 就真的完全拒绝了( ▼-▼ )
-</string>
+        Settings.System.canWrite(Context) //WRITE_SETTINGS\n
+        部分厂商会对ROM做修改比如小米，shouldShowRequestPermissionRationale只要拒绝了 就真的完全拒绝了( ▼-▼ )
+    </string>
     <string name="permission_show">
         ACCESS_LOCATION_EXTRA_COMMANDS\n
-ACCESS_NETWORK_STATE\n
-ACCESS_NOTIFICATION_POLICY\n
-ACCESS_WIFI_STATE\n
-BLUETOOTH\n
-BLUETOOTH_ADMIN\n
-BROADCAST_STICKY\n
-CHANGE_NETWORK_STATE\n
-CHANGE_WIFI_MULTICAST_STATE\n
-CHANGE_WIFI_STATE\n
-DISABLE_KEYGUARD\n
-EXPAND_STATUS_BAR\n
-GET_PACKAGE_SIZE\n
-INSTALL_SHORTCUT\n
-INTERNET\n
-KILL_BACKGROUND_PROCESSES\n
-MODIFY_AUDIO_SETTINGS\n
-NFC\n
-READ_SYNC_SETTINGS\n
-READ_SYNC_STATS\n
-RECEIVE_BOOT_COMPLETED\n
-REORDER_TASKS\n
-REQUEST_INSTALL_PACKAGES\n
-SET_ALARM\n
-SET_TIME_ZONE\n
-SET_WALLPAPER\n
-SET_WALLPAPER_HINTS\n
-TRANSMIT_IR\n
-UNINSTALL_SHORTCUT\n
-USE_FINGERPRINT\n
-VIBRATE\n
-WAKE_LOCK\n
-WRITE_SYNC_SETTINGS
+        ACCESS_NETWORK_STATE\n
+        ACCESS_NOTIFICATION_POLICY\n
+        ACCESS_WIFI_STATE\n
+        BLUETOOTH\n
+        BLUETOOTH_ADMIN\n
+        BROADCAST_STICKY\n
+        CHANGE_NETWORK_STATE\n
+        CHANGE_WIFI_MULTICAST_STATE\n
+        CHANGE_WIFI_STATE\n
+        DISABLE_KEYGUARD\n
+        EXPAND_STATUS_BAR\n
+        GET_PACKAGE_SIZE\n
+        INSTALL_SHORTCUT\n
+        INTERNET\n
+        KILL_BACKGROUND_PROCESSES\n
+        MODIFY_AUDIO_SETTINGS\n
+        NFC\n
+        READ_SYNC_SETTINGS\n
+        READ_SYNC_STATS\n
+        RECEIVE_BOOT_COMPLETED\n
+        REORDER_TASKS\n
+        REQUEST_INSTALL_PACKAGES\n
+        SET_ALARM\n
+        SET_TIME_ZONE\n
+        SET_WALLPAPER\n
+        SET_WALLPAPER_HINTS\n
+        TRANSMIT_IR\n
+        UNINSTALL_SHORTCUT\n
+        USE_FINGERPRINT\n
+        VIBRATE\n
+        WAKE_LOCK\n
+        WRITE_SYNC_SETTINGS
         \n\n
-Dangerous Permissions:
-group:android.permission-group.CONTACTS
-  permission:android.permission.WRITE_CONTACTS
-  permission:android.permission.GET_ACCOUNTS
-  permission:android.permission.READ_CONTACTS
+        Dangerous Permissions:
+        group:android.permission-group.CONTACTS
+        permission:android.permission.WRITE_CONTACTS
+        permission:android.permission.GET_ACCOUNTS
+        permission:android.permission.READ_CONTACTS
 
-group:android.permission-group.PHONE
-  permission:android.permission.READ_CALL_LOG
-  permission:android.permission.READ_PHONE_STATE
-  permission:android.permission.CALL_PHONE
-  permission:android.permission.WRITE_CALL_LOG
-  permission:android.permission.USE_SIP
-  permission:android.permission.PROCESS_OUTGOING_CALLS
-  permission:com.android.voicemail.permission.ADD_VOICEMAIL
+        group:android.permission-group.PHONE
+        permission:android.permission.READ_CALL_LOG
+        permission:android.permission.READ_PHONE_STATE
+        permission:android.permission.CALL_PHONE
+        permission:android.permission.WRITE_CALL_LOG
+        permission:android.permission.USE_SIP
+        permission:android.permission.PROCESS_OUTGOING_CALLS
+        permission:com.android.voicemail.permission.ADD_VOICEMAIL
 
-group:android.permission-group.CALENDAR
-  permission:android.permission.READ_CALENDAR
-  permission:android.permission.WRITE_CALENDAR
+        group:android.permission-group.CALENDAR
+        permission:android.permission.READ_CALENDAR
+        permission:android.permission.WRITE_CALENDAR
 
-group:android.permission-group.CAMERA
-  permission:android.permission.CAMERA
+        group:android.permission-group.CAMERA
+        permission:android.permission.CAMERA
 
-group:android.permission-group.SENSORS
-  permission:android.permission.BODY_SENSORS
+        group:android.permission-group.SENSORS
+        permission:android.permission.BODY_SENSORS
 
-group:android.permission-group.LOCATION
-  permission:android.permission.ACCESS_FINE_LOCATION
-  permission:android.permission.ACCESS_COARSE_LOCATION
+        group:android.permission-group.LOCATION
+        permission:android.permission.ACCESS_FINE_LOCATION
+        permission:android.permission.ACCESS_COARSE_LOCATION
 
-group:android.permission-group.STORAGE
-  permission:android.permission.READ_EXTERNAL_STORAGE
-  permission:android.permission.WRITE_EXTERNAL_STORAGE
+        group:android.permission-group.STORAGE
+        permission:android.permission.READ_EXTERNAL_STORAGE
+        permission:android.permission.WRITE_EXTERNAL_STORAGE
 
-group:android.permission-group.MICROPHONE
-  permission:android.permission.RECORD_AUDIO
+        group:android.permission-group.MICROPHONE
+        permission:android.permission.RECORD_AUDIO
 
-group:android.permission-group.SMS
-  permission:android.permission.READ_SMS
-  permission:android.permission.RECEIVE_WAP_PUSH
-  permission:android.permission.RECEIVE_MMS
-  permission:android.permission.RECEIVE_SMS
-  permission:android.permission.SEND_SMS
-  permission:android.permission.READ_CELL_BROADCASTS</string>
-    
+        group:android.permission-group.SMS
+        permission:android.permission.READ_SMS
+        permission:android.permission.RECEIVE_WAP_PUSH
+        permission:android.permission.RECEIVE_MMS
+        permission:android.permission.RECEIVE_SMS
+        permission:android.permission.SEND_SMS
+        permission:android.permission.READ_CELL_BROADCASTS
+    </string>
+
     <string name="picture_txt">
         BitmapFactory decode出Bitmap\n
         Bitmap和Matrix实现图像变换Bitmap.createBitmap()\n
@@ -114,11 +117,12 @@ group:android.permission-group.SMS
         inSampleSize\n
         inPurgeable = true;//内存不足时可以回收\n
         nInputShareable = true;\n
-        inDither = false;    /*不进行图片抖动处理*/\n
-        inPreferredConfig = null;  //设置让解码器以最佳方式解码\n
+        inDither = false; /*不进行图片抖动处理*/\n
+        inPreferredConfig = null; //设置让解码器以最佳方式解码\n
     </string>
 
     <string name="app_more">
+        App启动时的背景定义在styles.xml中\n
         targetSdkVersion 比如设置小于23，就不会进行动态权限管理\n
         代码混淆\n
         视图主题，修改源码主题\n
@@ -128,6 +132,12 @@ group:android.permission-group.SMS
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
 
-    <string name="issue_animation">AnimationUtils.loadAnimation返回的是Animation\n要是AlphaAnimation或者其他的子类，居然崩溃，崩了崩了
-    \n是因为xml文件中使用set下面包含alpha和直接使用alpha作为根目录</string>
+    <string name="issue_animation">
+        AnimationUtils.loadAnimation返回的是Animation\n要是AlphaAnimation或者其他的子类，居然崩溃，崩了崩了
+        \n是因为xml文件中使用set下面包含alpha和直接使用alpha作为根目录
+        \n使用style的方式定义Activity的切换动画好像只能用于5.0以下的版本
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
