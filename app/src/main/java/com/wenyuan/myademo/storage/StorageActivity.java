@@ -19,7 +19,6 @@ public class StorageActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-
     }
 
     @Override
