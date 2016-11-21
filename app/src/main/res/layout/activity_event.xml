@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_event"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wenyuan.myandroiddemo.event.EventActivity">
+    <include
+        android:id="@+id/include"
+        layout="@layout/title_bar"/>
+
+    <com.wenyuan.myandroiddemo.event.AView
+        android:id="@+id/a"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/include"
+        android:layout_margin="32dp"
+        android:background="@android:color/holo_blue_dark"
+        android:clickable="true">
+
+        <com.wenyuan.myandroiddemo.event.BView
+            android:id="@+id/b"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:background="@android:color/holo_orange_dark"
+            android:clickable="true">
+
+            <com.wenyuan.myandroiddemo.event.CView
+                android:id="@+id/c"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_centerInParent="true"
+                android:background="@color/black_overlay"
+                android:clickable="true">
+
+                <com.wenyuan.myandroiddemo.event.DView
+                    android:id="@+id/d"
+                    android:layout_width="84dp"
+                    android:layout_height="84dp"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:background="@color/cardview_light_background"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="D">
+                </com.wenyuan.myandroiddemo.event.DView>
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:text="C"/>
+            </com.wenyuan.myandroiddemo.event.CView>
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:text="B"/>
+        </com.wenyuan.myandroiddemo.event.BView>
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true" android:layout_alignTop="@+id/a"
+            android:layout_marginTop="16dp" android:text="A"/>
+    </com.wenyuan.myandroiddemo.event.AView>
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/include"
+        android:clickable="false">
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            tools:text="显示触发的事件方法名"/>
+
+    </ScrollView>
+
+
+</RelativeLayout>

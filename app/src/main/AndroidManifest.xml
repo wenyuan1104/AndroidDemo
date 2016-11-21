@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.wenyuan.myademo"
+<manifest package="com.wenyuan.myandroiddemo"
           xmlns:android="http://schemas.android.com/apk/res/android"
           xmlns:tools="http://schemas.android.com/tools">
 
@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="com.wenyuan.myandroiddemo.MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.Placeholder">
             <intent-filter>
@@ -25,41 +25,45 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".encrypt.EncyptActivity"
+            android:name="com.wenyuan.myandroiddemo.encrypt.EncyptActivity"
             android:theme="@style/AppTheme">
         </activity>
         <activity
-            android:name=".hardware.camera.SysCameraActivity"
+            android:name="com.wenyuan.myandroiddemo.hardware.camera.SysCameraActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|locale|fontScale|layoutDirection"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".hardware.camera.CustomCameraActivity"
+            android:name="com.wenyuan.myandroiddemo.hardware.camera.CustomCameraActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|locale|fontScale|layoutDirection"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".detail.permission.PermissionActivity">
+        <activity android:name="com.wenyuan.myandroiddemo.detail.permission.PermissionActivity">
         </activity>
-        <activity android:name=".detail.picture.HandlerPicActivity">
+        <activity android:name="com.wenyuan.myandroiddemo.detail.picture.HandlerPicActivity">
         </activity>
         <activity
-            android:name=".MoreActivity"
+            android:name="com.wenyuan.myandroiddemo.MoreActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_more"
             android:theme="@style/FullscreenTheme">
         </activity>
-        <activity android:name=".animation.PropertyAnimActivity">
+        <activity android:name="com.wenyuan.myandroiddemo.animation.PropertyAnimActivity">
         </activity>
-        <activity android:name=".animation.TweenAnimActivity">
+        <activity android:name="com.wenyuan.myandroiddemo.animation.TweenAnimActivity">
         </activity>
-        <activity android:name=".animation.FrameAnimActivity">
+        <activity android:name="com.wenyuan.myandroiddemo.animation.FrameAnimActivity">
         </activity>
-        <activity android:name=".animation.ActivityOptionsActivity">
+        <activity android:name="com.wenyuan.myandroiddemo.animation.ActivityOptionsActivity">
         </activity>
-        <activity android:name=".layout.LayoutActivity">
+        <activity android:name="com.wenyuan.myandroiddemo.layout.LayoutActivity">
         </activity>
-        <activity android:name=".storage.StorageActivity">
+        <activity android:name="com.wenyuan.myandroiddemo.storage.StorageActivity">
+        </activity>
+        <activity android:name="com.wenyuan.myandroiddemo.event.EventActivity">
+        </activity>
+        <activity android:name="com.wenyuan.myandroiddemo.customview.CustomViewActivity">
         </activity>
     </application>
 

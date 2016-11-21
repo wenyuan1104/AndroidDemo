@@ -127,6 +127,7 @@
         代码混淆\n
         视图主题，修改源码主题\n
         代码封装、优化\n
+        gradle配置\n
     </string>
     <string name="title_activity_more">MoreActivity</string>
     <string name="dummy_button">Dummy Button</string>
@@ -136,6 +137,10 @@
         AnimationUtils.loadAnimation返回的是Animation\n要是AlphaAnimation或者其他的子类，居然崩溃，崩了崩了
         \n是因为xml文件中使用set下面包含alpha和直接使用alpha作为根目录
         \n使用style的方式定义Activity的切换动画好像只能用于5.0以下的版本
+    </string>
+
+    <string name="issue_event">
+        dispatchTouchEvent返回true怎么没有调用当前view的onTouchEvent难道是直接返回onTouchEvent
     </string>
 
     <!-- TODO: Remove or change this placeholder text -->
