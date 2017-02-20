@@ -1,10 +1,9 @@
 package com.wenyuan.myandroiddemo.layout;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.wenyuan.myandroiddemo.BaseFragment;
 import com.wenyuan.myandroiddemo.R;
@@ -14,16 +13,10 @@ import com.wenyuan.myandroiddemo.R;
  */
 public class LayoutFragment_1 extends BaseFragment {
 
+    private SwipeRefreshLayout mRefreshLayout;
+    private RecyclerView mRecyclerView;
 
     public LayoutFragment_1() {
-    }
-
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        super.onCreateView(inflater, container, savedInstanceState);
-        return mFragRootView;
     }
 
     @Override
@@ -33,7 +26,9 @@ public class LayoutFragment_1 extends BaseFragment {
 
     @Override
     protected void initView(View view) {
-
+        mRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipe_header_ui);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.recycler_show);
+        mRefreshLayout.setColorSchemeResources(android.R.color.holo_orange_light, android.R.color.holo_green_light, android.R.color.holo_blue_light);
     }
 
     @Override

@@ -8,4 +8,9 @@
 
     <!--透明-->
     <color name="translucence">#00000000</color>
+
+    <!--浅绿色-->
+    <color name="light_green">#B2DFDB</color>
+    <!-- 深绿色 -->
+    <color name="dark_green">#26A69A</color>
 </resources>

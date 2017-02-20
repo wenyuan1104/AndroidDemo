@@ -1,70 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.wenyuan.myandroiddemo"
-          xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.wenyuan.myandroiddemo">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
-        android:allowBackup="true"
+        android:name=".BaseApplication"
+        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.wenyuan.myandroiddemo.MainActivity"
+            android:name=".MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/AppTheme.Placeholder">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.wenyuan.myandroiddemo.encrypt.EncyptActivity"
-            android:theme="@style/AppTheme">
-        </activity>
+            android:name=".encrypt.EncyptActivity"
+            android:theme="@style/AppTheme"></activity>
         <activity
-            android:name="com.wenyuan.myandroiddemo.hardware.camera.SysCameraActivity"
+            android:name=".hardware.camera.SysCameraActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|locale|fontScale|layoutDirection"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
-            android:name="com.wenyuan.myandroiddemo.hardware.camera.CustomCameraActivity"
+            android:name=".hardware.camera.CustomCameraActivity"
             android:configChanges="orientation|keyboardHidden|screenSize|locale|fontScale|layoutDirection"
-            android:screenOrientation="portrait">
-        </activity>
-        <activity android:name="com.wenyuan.myandroiddemo.detail.permission.PermissionActivity">
-        </activity>
-        <activity android:name="com.wenyuan.myandroiddemo.detail.picture.HandlerPicActivity">
-        </activity>
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".other.permission.PermissionActivity"></activity>
+        <activity android:name=".other.picture.HandlerPicActivity"></activity>
         <activity
-            android:name="com.wenyuan.myandroiddemo.MoreActivity"
+            android:name=".MoreActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_more"
-            android:theme="@style/FullscreenTheme">
-        </activity>
-        <activity android:name="com.wenyuan.myandroiddemo.animation.PropertyAnimActivity">
-        </activity>
-        <activity android:name="com.wenyuan.myandroiddemo.animation.TweenAnimActivity">
-        </activity>
-        <activity android:name="com.wenyuan.myandroiddemo.animation.FrameAnimActivity">
-        </activity>
-        <activity android:name="com.wenyuan.myandroiddemo.animation.ActivityOptionsActivity">
-        </activity>
-        <activity android:name="com.wenyuan.myandroiddemo.layout.LayoutActivity">
-        </activity>
-        <activity android:name="com.wenyuan.myandroiddemo.storage.StorageActivity">
-        </activity>
-        <activity android:name="com.wenyuan.myandroiddemo.event.EventActivity">
-        </activity>
-        <activity android:name="com.wenyuan.myandroiddemo.customview.CustomViewActivity">
-        </activity>
+            android:theme="@style/FullscreenTheme"></activity>
+        <activity android:name=".animation.PropertyAnimActivity"></activity>
+        <activity android:name=".animation.TweenAnimActivity"></activity>
+        <activity android:name=".animation.FrameAnimActivity"></activity>
+        <activity android:name=".animation.ActivityOptionsActivity"></activity>
+        <activity android:name=".layout.LayoutActivity"></activity>
+        <activity android:name=".storage.StorageActivity"></activity>
+        <activity android:name=".event.EventActivity"></activity>
+        <activity android:name=".customview.CustomViewActivity"></activity>
+        <activity android:name=".web.WebActivity"></activity>
+        <activity android:name=".web.InteractionActivity"></activity>
+        <activity
+            android:name=".media.MediaActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize|locale|fontScale|layoutDirection"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".thirdparty.networkframe.NetworkActivity"></activity>
+
+        <!-- 注册 自定义content provider -->
+        <provider
+            android:name=".storage.utils.provider.MyProvider"
+            android:authorities="com.wenyuan.myandroiddemo.storage.utils.provider.MyProvider" />
+
+        <activity android:name=".service.ServiceActivity"></activity>
+        <!-- 注册service -->
+        <!-- exported:指示该服务是否能够被其他应用程序组件调用或跟它交互 -->
+        <!-- 有一个元素的enabled属性被设置为false，该服务就会被禁用，而不能被实例化 -->
+        <!-- process:这个属性用于设定服务所运行的进程名称 -->
+        <!-- permission:这个属性定义了要启动或绑定服务的实体必须要有的权限 -->
+        <service
+            android:name=".service.MyService"
+            android:enabled="true"
+            android:exported="true"
+            android:label="测试服务start"
+            android:process="com.wenyuan.myandroiddemo"></service>
+        <service
+            android:name=".service.MyServiceForBind"
+            android:enabled="true"
+            android:exported="true"
+            android:label="测试服务bind"
+            android:process="com.wenyuan.myandroiddemo"></service>
+        <!-- todo 冒号“：”的含义是在当前进程名前面附上当前的包名 -->
+        <service
+            android:name=".service.MyServiceForAlarm"
+            android:enabled="true"
+            android:exported="true"
+            android:label="测试服务for闹铃服务"
+            android:process=":MyServiceForAlarm"></service>
+        <service
+            android:name=".service.MyIntentService"
+            android:exported="false"></service>
+
+        <!-- 注册 广播接收器 -->
+        <!-- 在清单文件中注册的**内部类广播** 需要使用static 静态修饰 -->
+        <receiver
+            android:name=".service.ServiceActivity$MyReceiverForRX"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.wenyuan.broadcastrecall.static" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".jni.JNIActivity"></activity>
+        <activity android:name=".mode.mvp.ModeActivity"></activity>
+        <activity android:name=".other.socket.SocketActivity"></activity>
     </application>
 
 </manifest>

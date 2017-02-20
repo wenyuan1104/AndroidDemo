@@ -127,9 +127,9 @@ public abstract class BaseFragment extends Fragment {
 
     protected abstract void initView(View view);
 
-    protected abstract void initData();
-
     protected abstract void initObject();
+
+    protected abstract void initData();
 
     /**
      * 检查当前网络是否可用

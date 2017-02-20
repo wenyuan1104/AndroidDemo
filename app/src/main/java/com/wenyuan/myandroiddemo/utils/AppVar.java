@@ -1,7 +1,5 @@
 package com.wenyuan.myandroiddemo.utils;
 
-import android.content.Context;
-
 /**
  * Created by www22_000 as wenyuan on 2016/11/2 23:32.
  * Email :wenyuan1104@163.com
@@ -13,13 +11,6 @@ import android.content.Context;
 public class AppVar {
 
     private static volatile AppVar sAppVar;// <<< 这里添加了 volatile
-
-    /**
-     * @param context
-     */
-    public AppVar(Context context) {
-
-    }
 
     /**
      * 第三种：双重检测同步延迟加载
@@ -34,17 +25,18 @@ public class AppVar {
      *
      * @return
      */
-    public static AppVar getInstance(Context context) {
+    public static AppVar getInstance() {
         AppVar appVar = sAppVar;// <<< 在这里创建临时变量
         if (appVar == null) {
             synchronized (AppVar.class) {
                 appVar = sAppVar;
                 if (appVar == null) {
-                    appVar = new AppVar(context);
+                    appVar = new AppVar();
                     sAppVar = appVar;
                 }
             }
         }
         return appVar;// <<< 注意这里返回的是临时变量
     }
+
 }

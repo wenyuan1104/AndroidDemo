@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_network"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wenyuan.myandroiddemo.thirdparty.networkframe.NetworkActivity">
+
+    <include
+        android:id="@id/include"
+        layout="@layout/title_bar"/>
+
+    <FrameLayout android:id="@+id/frament_net_content"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_below="@id/include"/>
+
+</RelativeLayout>

@@ -1,0 +1,39 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.wenyuan.myandroiddemo.media.VoiceFragment">
+
+    <TextView android:id="@+id/text_show_music"
+              style="@style/TextAppearance.AppCompat.Large"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:clickable="true"
+              android:drawableRight="@drawable/music_btn_voice"
+              android:padding="16dp"
+              android:textColor="@android:color/darker_gray"
+              tools:text="local:小幸运"/>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp"
+          android:background="@android:color/darker_gray"/>
+
+    <TextView android:id="@+id/text_show_online_voice"
+              style="@style/TextAppearance.AppCompat.Large"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:drawableRight="@drawable/music_btn_voice"
+              android:padding="16dp"
+              android:textColor="@android:color/darker_gray"
+              tools:text="online:本质"/>
+    <View android:layout_width="match_parent" android:layout_height="1dp"
+          android:background="@android:color/darker_gray"/>
+    <TextView android:id="@+id/text_show_sound"
+              style="@style/TextAppearance.AppCompat.Large"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:drawableRight="@drawable/music_btn_voice"
+              android:padding="16dp"
+              android:textColor="@android:color/darker_gray"
+              tools:text="sound"/>
+</LinearLayout>

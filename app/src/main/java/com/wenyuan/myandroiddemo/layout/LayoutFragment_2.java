@@ -71,7 +71,29 @@ public class LayoutFragment_2 extends BaseFragment {
 
         @Override
         public Fragment getItem(int position) {
-            return new DemoFragment();
+            return LoadFragment(position);
+        }
+
+        private Fragment LoadFragment(int position) {
+            BaseFragment baseFragment;
+            switch (position) {
+                case 0:
+                    baseFragment = new DemoFragment();
+                    break;
+                case 1:
+                    baseFragment = new Demo2Fragment();
+                    break;
+                case 2:
+                    baseFragment = new Demo3Fragment();
+                    break;
+                case 3:
+                    baseFragment = new Demo4Fragment();
+                    break;
+                default:
+                    baseFragment = new LayoutFragment_3();
+                    break;
+            }
+            return baseFragment;
         }
 
         @Override

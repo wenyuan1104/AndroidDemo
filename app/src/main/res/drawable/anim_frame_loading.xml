@@ -4,28 +4,28 @@
     android:oneshot="false">
     <!--Android:onshot如果定义为true的话，此动画只会执行一次，如果为false则一直循环。-->
     <item
-        android:drawable="@mipmap/progressbar_1"
+        android:drawable="@drawable/progressbar_1"
         android:duration="200"/>
     <item
-        android:drawable="@mipmap/progressbar_2"
+        android:drawable="@drawable/progressbar_2"
         android:duration="200"/>
     <item
-        android:drawable="@mipmap/progressbar_3"
+        android:drawable="@drawable/progressbar_3"
         android:duration="200"/>
     <item
-        android:drawable="@mipmap/progressbar_4"
+        android:drawable="@drawable/progressbar_4"
         android:duration="200"/>
     <item
-        android:drawable="@mipmap/progressbar_5"
+        android:drawable="@drawable/progressbar_5"
         android:duration="200"/>
     <item
-        android:drawable="@mipmap/progressbar_6"
+        android:drawable="@drawable/progressbar_6"
         android:duration="200"/>
     <item
-        android:drawable="@mipmap/progressbar_7"
+        android:drawable="@drawable/progressbar_7"
         android:duration="200"/>
     <item
-        android:drawable="@mipmap/progressbar_8"
+        android:drawable="@drawable/progressbar_8"
         android:duration="200"/>
 
 </animation-list>

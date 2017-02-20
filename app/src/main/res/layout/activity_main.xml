@@ -97,19 +97,14 @@
                         android:id="@+id/but_mvp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="MVP"/>
+                        android:textAllCaps="false"
+                        android:text="Mode"/>
 
                     <Button
-                        android:id="@+id/but_mvvm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="MVVM"/>
-
-                    <Button
-                        android:ellipsize="marquee"
                         android:id="@+id/but_file"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:ellipsize="marquee"
                         android:text="存储"/>
 
                     <Button
@@ -123,6 +118,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Service"
+                        android:textAllCaps="false"/>
+
+                    <Button
+                        android:id="@+id/but_broadcast"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Broadcast"
                         android:textAllCaps="false"/>
 
                     <Button
@@ -150,10 +152,22 @@
                         android:text="jni"/>
 
                     <Button
-                        android:id="@+id/but_down_up"
+                        android:id="@+id/but_socket"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="上传下载"/>
+                        android:textAllCaps="false"
+                        android:text="socket"/>
+                    <Button
+                        android:id="@+id/but_aidl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAllCaps="false"
+                        android:text="aidl"/>
+                    <Button
+                        android:id="@+id/drawablexml"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="选择器之类的xml"/>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
 

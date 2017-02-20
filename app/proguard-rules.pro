@@ -15,37 +15,8 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
-#-------------------------------------------定制化区域----------------------------------------------
-#参考：http://www.jianshu.com/p/f3455ecaa56e/comments/5453172#comment-5453172
-#---------------------------------1.实体类---------------------------------
-#-keep class 你的实体类所在的包.** { *; }
-
-
-#-------------------------------------------------------------------------
-
-#---------------------------------2.第三方包-------------------------------
-##---------------Begin: 加密  ----------
--libraryjars app/libs/bcprov-jdk14-155.jar
--dontwarn org.bouncycastle.**
--keep class org.bouncycastle.** { *; }
-##---------------End: 加密  ----------
-
-#-------------------------------------------------------------------------
-
-#---------------------------------3.与js互相调用的类------------------------
-
-
-
-#-------------------------------------------------------------------------
-
-#---------------------------------4.反射相关的类和方法-----------------------
-
-
-
-#----------------------------------------------------------------------------
-#---------------------------------------------------------------------------------------------------
-
 #-------------------------------------------基本不用动区域--------------------------------------------
+#参考：http://www.jianshu.com/p/f3455ecaa56e/comments/5453172#comment-5453172
 #---------------------------------基本指令区----------------------------------
 -optimizationpasses 5
 -dontusemixedcaseclassnames
@@ -58,6 +29,8 @@
 -keepattributes *Annotation*,InnerClasses
 -keepattributes Signature
 -keepattributes SourceFile,LineNumberTable
+-keepattributes EnclosingMethod
+-keepattributes Exceptions,Deprecated
 #----------------------------------------------------------------------------
 
 #---------------------------------默认保留区---------------------------------
@@ -123,5 +96,66 @@
 -keepclassmembers class * extends android.webkit.WebViewClient {
     public void *(android.webkit.WebView, jav.lang.String);
 }
+#----------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------
+
+#-------------------------------------------定制化区域----------------------------------------------
+#---------------------------------1.实体类---------------------------------
+#-keep class 你的实体类所在的包.** { *; }
+-keep class com.wenyuan.myandroiddemo.storage.utils.db.user {*;}
+-keep class com.wenyuan.myandroiddemo.mode.mvp {*;}
+
+#-------------------------------------------------------------------------
+
+#---------------------------------2.第三方包-------------------------------
+##---------------Begin: 加密  ----------
+#-libraryjars libs/bcprov-jdk14-155.jar
+#-dontwarn org.bouncycastle.**
+#-keep class org.bouncycastle.** {*;}
+#-keep class resources.org.bouncycastle.i18n.test.** {*;}
+##---------------End: 加密  ----------
+
+##--------------Begin: Glide  -----------
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public enum com.bumptech.glide.load.resource.bitmap.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
+#最后的这句keepresourcexmlelements不要写。
+#-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
+##--------------End:  Glide  ------------
+
+##--------------Begin: Fresco------------
+# Keep our interfaces so they can be used by other ProGuard rules.
+# See http://sourceforge.net/p/proguard/bugs/466/
+-keep,allowobfuscation @interface com.facebook.common.internal.DoNotStrip
+# Do not strip any method/class that is annotated with @DoNotStrip
+-keep @com.facebook.common.internal.DoNotStrip class *
+-keepclassmembers class * {
+    @com.facebook.common.internal.DoNotStrip *;
+}
+# Keep native methods
+-keepclassmembers class * {
+    native <methods>;
+}
+-dontwarn okio.**
+-dontwarn com.squareup.okhttp.**
+-dontwarn okhttp3.**
+-dontwarn javax.annotation.**
+-dontwarn com.android.volley.toolbox.**
+##--------------End: Fresco--------------
+#-------------------------------------------------------------------------
+
+#---------------------------------3.与js互相调用的类------------------------
+-keepclasseswithmembers class com.wenyuan.myandroiddemo.web.InteractionActivity$ProxyBridge {
+          *;#        <methods>;
+ }
+
+#-------------------------------------------------------------------------
+
+#---------------------------------4.反射相关的类和方法-----------------------
+
+
+
 #----------------------------------------------------------------------------
 #---------------------------------------------------------------------------------------------------

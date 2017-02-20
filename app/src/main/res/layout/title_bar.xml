@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--<merge-->
+<!--&gt;-->
 <android.support.design.widget.AppBarLayout
     android:id="@+id/appbar_layout"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -15,3 +17,4 @@
 
     </android.support.v7.widget.Toolbar>
 </android.support.design.widget.AppBarLayout>
+    <!--</merge>-->

@@ -1,0 +1,21 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.wenyuan.myandroiddemo.layout.Demo2Fragment">
+
+    <com.wenyuan.myandroiddemo.thirdparty.viewframe.pullrefresh.UltraPTRFragmentLayout
+        android:id="@+id/custom_pull_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/list_show_custom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:columnCount="3">
+        </ListView>
+
+    </com.wenyuan.myandroiddemo.thirdparty.viewframe.pullrefresh.UltraPTRFragmentLayout>
+
+</FrameLayout>

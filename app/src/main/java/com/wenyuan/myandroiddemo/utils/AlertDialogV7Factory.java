@@ -5,8 +5,10 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 
@@ -65,7 +67,6 @@ public class AlertDialogV7Factory {
      *
      * @param title
      * @param content
-     * @param listener
      */
     public AlertDialog showForPermissionOfDialog(String title, String content) {
         AlertDialog.Builder builder = new AlertDialog.Builder(mContext)
@@ -96,12 +97,16 @@ public class AlertDialogV7Factory {
      */
     public class ProgressDialogFactory extends ProgressDialog {
 
+        private final Context mContext;
+
         public ProgressDialogFactory(Context context) {
             super(context);
+            this.mContext = context;
         }
 
         public ProgressDialogFactory(Context context, int theme) {
             super(context, theme);
+            this.mContext = context;
         }
 
         /**
@@ -109,12 +114,11 @@ public class AlertDialogV7Factory {
          *
          * @param message
          */
+        @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
         public void showLoadDialog(String title, String message) {
             this.setCancelable(false);
-            if (!TextUtils.isEmpty(title))
-                this.setTitle(title);
-
-            this.setMessage(message);
+            this.setTitle(TextUtils.isEmpty(title) ? "" : title);
+            this.setMessage(TextUtils.isEmpty(message) ? "" : message);
             this.create();
             this.show();
         }

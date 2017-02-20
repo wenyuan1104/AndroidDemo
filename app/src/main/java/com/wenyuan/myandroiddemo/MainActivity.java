@@ -2,9 +2,14 @@ package com.wenyuan.myandroiddemo;
 
 import android.animation.ValueAnimator;
 import android.content.DialogInterface;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.graphics.Point;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.util.TypedValue;
+import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,13 +22,25 @@ import com.wenyuan.myandroiddemo.animation.FrameAnimActivity;
 import com.wenyuan.myandroiddemo.animation.PropertyAnimActivity;
 import com.wenyuan.myandroiddemo.animation.TweenAnimActivity;
 import com.wenyuan.myandroiddemo.customview.CustomViewActivity;
-import com.wenyuan.myandroiddemo.detail.permission.PermissionActivity;
-import com.wenyuan.myandroiddemo.detail.picture.HandlerPicActivity;
 import com.wenyuan.myandroiddemo.encrypt.EncyptActivity;
 import com.wenyuan.myandroiddemo.event.EventActivity;
 import com.wenyuan.myandroiddemo.hardware.camera.SysCameraActivity;
+import com.wenyuan.myandroiddemo.jni.JNIActivity;
 import com.wenyuan.myandroiddemo.layout.LayoutActivity;
+import com.wenyuan.myandroiddemo.media.MediaActivity;
+import com.wenyuan.myandroiddemo.mode.mvp.ModeActivity;
+import com.wenyuan.myandroiddemo.other.permission.PermissionActivity;
+import com.wenyuan.myandroiddemo.other.picture.HandlerPicActivity;
+import com.wenyuan.myandroiddemo.other.socket.SocketActivity;
+import com.wenyuan.myandroiddemo.service.ServiceActivity;
+import com.wenyuan.myandroiddemo.storage.StorageActivity;
+import com.wenyuan.myandroiddemo.thirdparty.networkframe.NetworkActivity;
 import com.wenyuan.myandroiddemo.utils.AlertDialogV7Factory;
+import com.wenyuan.myandroiddemo.utils.AppInfos;
+import com.wenyuan.myandroiddemo.utils.UIManager;
+import com.wenyuan.myandroiddemo.web.WebActivity;
+
+import java.util.List;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
 
@@ -40,7 +57,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button mButBitmap;
     private Button mButVersionM;
     private Button mButMvp;
-    private Button mButMvvm;
     private Button mButFile;
     private Button mButWeb;
     private Button mButService;
@@ -49,17 +65,40 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button mButMedia;
     private Button mButNotifications;
     private Button mButJni;
-    private Button mButDownUp;
+    private Button mButSocket;
+    private Button mButAidl;
+    private Button mDrawablexml;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         overridePendingTransition(R.anim.anim_activity_start, 0);
-        try {
-            Thread.sleep(1500L);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(500L);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         super.onCreate(savedInstanceState);
+        initAppInfo();
+    }
+
+    /**
+     * 应用初始化信息
+     */
+    private void initAppInfo() {
+        //保存手机屏幕的宽高
+        Display display = getWindowManager().getDefaultDisplay();
+        if (Build.VERSION.SDK_INT >= 13) {
+            Point point = new Point();
+            display.getSize(point);
+            UIManager.getInstance().setScreenHeight(point.y);
+            UIManager.getInstance().setScreenWidth(point.x);
+        } else {
+            UIManager.getInstance().setScreenWidth(display.getWidth());
+            UIManager.getInstance().setScreenHeight(display.getHeight());
+        }
+        //获取 手机安装所有应用信息
+        List<ApplicationInfo> apps = getPackageManager().getInstalledApplications(PackageManager.MATCH_UNINSTALLED_PACKAGES);
+        AppInfos.getInstance().setAppNum(apps.size());
     }
 
     @Override
@@ -94,8 +133,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mButVersionM.setOnClickListener(this);
         mButMvp = (Button) findViewById(R.id.but_mvp);
         mButMvp.setOnClickListener(this);
-        mButMvvm = (Button) findViewById(R.id.but_mvvm);
-        mButMvvm.setOnClickListener(this);
         mButFile = (Button) findViewById(R.id.but_file);
         mButFile.setOnClickListener(this);
         mButWeb = (Button) findViewById(R.id.but_web);
@@ -110,8 +147,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mButNotifications.setOnClickListener(this);
         mButJni = (Button) findViewById(R.id.but_jni);
         mButJni.setOnClickListener(this);
-        mButDownUp = (Button) findViewById(R.id.but_down_up);
-        mButDownUp.setOnClickListener(this);
+        mButSocket = (Button) findViewById(R.id.but_socket);
+        mButSocket.setOnClickListener(this);
+        mButAidl = (Button) findViewById(R.id.but_aidl);
+        mButAidl.setOnClickListener(this);
+        mDrawablexml = (Button) findViewById(R.id.drawablexml);
+        mDrawablexml.setOnClickListener(this);
     }
 
     @Override
@@ -198,6 +239,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.but_statesbar:
                 break;
             case R.id.but_thirdparty:
+                startActivity(NetworkActivity.class);
                 break;
             case R.id.but_bitmap:
                 startActivity(HandlerPicActivity.class);
@@ -206,25 +248,43 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 startActivity(PermissionActivity.class);
                 break;
             case R.id.but_mvp:
-                break;
-            case R.id.but_mvvm:
+                startActivity(ModeActivity.class);
                 break;
             case R.id.but_file:
+                startActivity(StorageActivity.class);
                 break;
             case R.id.but_web:
+                startActivity(WebActivity.class);
                 break;
             case R.id.but_service:
+                startActivity(ServiceActivity.class);
                 break;
             case R.id.but_layout:
                 startActivity(LayoutActivity.class);
                 break;
             case R.id.but_media:
+                startActivity(MediaActivity.class);
                 break;
             case R.id.but_Notifications:
                 break;
             case R.id.but_jni:
+                startActivity(JNIActivity.class);
                 break;
-            case R.id.but_down_up:
+            case R.id.but_socket:
+                startActivity(SocketActivity.class);
+                break;
+            case R.id.but_aidl:
+                break;
+            case R.id.drawablexml:
+                //DownloadManager.Request request = new DownloadManager.Request(Uri.parse("http://180.153.105.141/imtt.dd.qq.com/16891/40D0FE3327DE8BB6B4750EE785F82DCB.apk?mkey=587cc04381727a87&f=858&c=0&fsname=com.coolapk.market_7.3_1701135.apk&csr=4d5s&p=.apk"));
+                ////指定下载路径和下载文件名
+                //request.setDestinationInExternalPublicDir(Environment.getExternalStorageDirectory().getPath(), "wenyuanapk");
+                //request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE);
+                //request.setVisibleInDownloadsUi(true);
+                //DownloadManager downloadManager = (DownloadManager) mContext.getSystemService(Context.DOWNLOAD_SERVICE);
+                ////加入下载队列后会给该任务返回一个long型的id，
+                ////通过该id可以取消任务，重启任务等等，看上面源码中框起来的方法
+                //long mTaskId = downloadManager.enqueue(request);
                 break;
         }
     }

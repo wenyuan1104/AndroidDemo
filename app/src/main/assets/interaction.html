@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>js 和 android交互</title>
+    <!-- 样式 -->
+    <style media="screen">
+        button {
+            color: blue;
+            background-color: bule;
+            font-size: 20px;
+        }
+
+
+    </style>
+    <!-- javascript 脚本 -->
+    <script type="text/javascript">
+        // 调用android原生方法jsInvokeForandroid()
+        function buttonOnclick() {
+            interactionInvoke.jsInvokeForandroid("我是从js传过来的数据!")
+        }
+        // android调用javascript的函数
+        function androidInvokeJs(var1) {
+            document.getElementById("h2_1").innerHTML = var1;
+        }
+        function androidInvokeJsForAlert(var2) {
+            alert(var2);
+        }
+
+
+    </script>
+</head>
+
+<body>
+<div class="div_1" align="center">
+    <button type="button" name="button" onclick="buttonOnclick()">invoke android</button>
+    <h2 id="h2_1">androdi 调用js的函数</h2>
+</div>
+</body>
+
+</html>

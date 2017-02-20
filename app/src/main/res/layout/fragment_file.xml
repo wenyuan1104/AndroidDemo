@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context="com.wenyuan.myandroiddemo.storage.FileFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:text="Internal Storage"/>
+    <View android:layout_width="match_parent" android:layout_height="1dp"
+          android:background="@android:color/darker_gray"/>
+    <Button
+        android:id="@+id/but_interior_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:text="set"/>
+    <TextView
+        android:id="@+id/text_interior_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:text="TextView"/>
+    <Button
+        android:id="@+id/but_interior_get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:text="get"/>
+    <TextView
+        android:id="@+id/text_interior_get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"/>
+
+    <View
+        android:layout_width="match_parent" android:layout_height="3dp"
+        android:layout_marginBottom="16dp"
+        android:background="@android:color/holo_blue_dark"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:text="External Storage"/>
+    <View
+        android:layout_width="match_parent" android:layout_height="1dp"
+        android:background="@android:color/darker_gray"/>
+    <Button
+        android:id="@+id/but_external_set" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="set"/>
+    <TextView
+        android:id="@+id/text_external_set"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" android:text="TextView"/>
+
+    <Button android:id="@+id/but_external_get" android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="get"/>
+    <ImageView
+        android:id="@+id/img_external_get"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+</LinearLayout>

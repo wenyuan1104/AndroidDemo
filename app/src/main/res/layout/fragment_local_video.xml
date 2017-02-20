@@ -1,0 +1,25 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="com.wenyuan.myandroiddemo.media.LocalVideoFragment">
+
+    <com.wenyuan.myandroiddemo.media.utils.MySurfaceView
+        android:id="@+id/surface_local_video"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"/>
+    <ImageView
+        android:id="@+id/img_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_gravity="center"
+        app:srcCompat="@android:drawable/ic_media_play"/>
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:text="local video" android:textColor="@android:color/white"/>
+
+</FrameLayout>

@@ -41,7 +41,7 @@
 
     <!--APP启动时解决白屏问题 给activity设置theme-->
     <style name="AppTheme.Placeholder">
-        <item name="android:windowBackground">@mipmap/start</item>
+        <item name="android:windowBackground">@drawable/start</item>
         <item name="colorPrimaryDark">@android:color/white</item>
     </style>
 
@@ -81,6 +81,23 @@
         <item name="android:textColor">@drawable/selector_indicator_text_color</item>
     </style>
     <!-- viewpagerindicator样式结束############################################################## -->
+
+    <!-- Switch -->
+    <style name="MySwitch" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">@color/dark_green</item>
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/colorAccent</item>
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">@color/light_green</item>
+    </style>
+
+    <!-- radio Button -->
+    <style name="MyRadioButton" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@android:color/darker_gray</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+    </style>
+
     <!---->
     <style name="FullscreenTheme" parent="AppTheme">
         <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>

@@ -6,4 +6,12 @@
         <item name="alertDialogTheme">@style/Theme.AppCompat.Light.Dialog.Alert.Self</item>
         <item name="android:windowContentTransitions">true</item>
     </style>
+
+    <!-- Flat Button -->
+    <!-- 前缀android: 不要写-->
+    <!--切换 Button 按下状态的颜色你可以使用主题的 colorControlHighlight 属性，虽然它仅仅影响 Lollipop 版本的系统。-->
+    <style name="FlatButtonTheme" parent="Theme.AppCompat.Light">
+        <item name="colorControlHighlight">@color/colorAccent</item>
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+    </style>
 </resources>

@@ -201,6 +201,19 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/edit_base64_out"
                 android:text="base64解密后的数据"/>
+
+            <View
+                android:id="@+id/view_3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/text_show_base64_decode"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorPrimaryDark"/>
+            <!--<LinearLayout android:layout_width="match_parent"-->
+                          <!--android:orientation=""-->
+                          <!--android:layout_height="wrap_content">-->
+                <!---->
+            <!--</LinearLayout>-->
         </RelativeLayout>
     </ScrollView>
 </RelativeLayout>

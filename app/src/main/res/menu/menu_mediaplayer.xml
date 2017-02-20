@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_media_switch"
+        android:icon="@drawable/ic_repeat_black_24dp"
+        android:textAllCaps="false"
+        android:title="local/online"
+        app:showAsAction="always"/>
+
+</menu>

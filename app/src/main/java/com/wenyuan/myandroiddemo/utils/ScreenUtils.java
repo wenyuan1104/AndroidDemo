@@ -7,8 +7,14 @@ package com.wenyuan.myandroiddemo.utils;
 
 public class ScreenUtils {
 
-    //public static int getScreenWidth() {
-    //
-    //}
+    /**
+     *
+     * @return
+     */
+    public static int getScreenWidth() {
+        //AppVar.getInstance().getAppContext();
+        //context
+        return 0;
+    }
 
 }

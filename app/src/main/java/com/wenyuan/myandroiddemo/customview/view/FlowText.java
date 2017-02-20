@@ -13,7 +13,6 @@ import com.wenyuan.myandroiddemo.R;
  * Created by wenyuan on 2016/11/21 0:30.
  * Description:
  */
-
 public class FlowText extends View {
 
     private String mText;

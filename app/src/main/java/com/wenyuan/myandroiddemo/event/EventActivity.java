@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.socks.library.KLog;
 import com.wenyuan.myandroiddemo.BaseActivity;
 import com.wenyuan.myandroiddemo.R;
-import com.wenyuan.myandroiddemo.utils.ToastUtils;
+import com.wenyuan.myandroiddemo.utils.copy.ToastUtils;
 
 /**
  * 事件拦截机制是由父视图开始发起对事件的拦截

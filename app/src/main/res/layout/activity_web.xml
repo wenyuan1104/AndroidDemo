@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_web"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wenyuan.myandroiddemo.web.WebActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/title_bar"/>
+
+    <com.wenyuan.myandroiddemo.thirdparty.viewframe.pullrefresh.UltraPTRFragmentLayout
+        android:id="@+id/pull_refresh_web"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/include">
+        <WebView
+            android:id="@+id/webview_show"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </WebView>
+    </com.wenyuan.myandroiddemo.thirdparty.viewframe.pullrefresh.UltraPTRFragmentLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:layout_alignTop="@+id/pull_refresh_web"
+        android:elevation="1dp"
+        android:progressDrawable="@drawable/progressbar_color"/>
+
+
+</RelativeLayout>

@@ -25,7 +25,7 @@ import com.socks.library.KLog;
 import com.wenyuan.myandroiddemo.BaseActivity;
 import com.wenyuan.myandroiddemo.R;
 import com.wenyuan.myandroiddemo.utils.AlertDialogV7Factory;
-import com.wenyuan.myandroiddemo.utils.ToastUtils;
+import com.wenyuan.myandroiddemo.utils.copy.ToastUtils;
 
 import java.io.File;
 import java.text.SimpleDateFormat;

@@ -17,7 +17,7 @@ import android.widget.RelativeLayout;
 
 import com.wenyuan.myandroiddemo.BaseActivity;
 import com.wenyuan.myandroiddemo.R;
-import com.wenyuan.myandroiddemo.utils.ToastUtils;
+import com.wenyuan.myandroiddemo.utils.copy.ToastUtils;
 
 /**
  * Tween动画是操作某个控件让其展现出旋转、渐变、移动、缩放的这么一种转换过程，

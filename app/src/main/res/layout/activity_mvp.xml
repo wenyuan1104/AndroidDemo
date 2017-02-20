@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/activity_mvp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.wenyuan.myandroiddemo.mode.mvp.ModeActivity">
+
+    <include
+        android:id="@+id/id"
+        layout="@layout/title_bar"/>
+
+    <Button
+        android:id="@+id/but_mvp_get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id"
+        android:text="get info in github"
+        android:textAllCaps="false"/>
+
+    <ProgressBar
+        android:id="@+id/loading_mvp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@+id/but_mvp_get"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/text_mvp_show"
+        style="@style/TextAppearance.AppCompat.Large"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/but_mvp_get"
+        android:layout_marginTop="8dp"
+        android:text=""
+        android:textColor="@android:color/darker_gray"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/id"
+        android:text="mvp2"
+        android:id="@+id/but_mvp_get_2"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

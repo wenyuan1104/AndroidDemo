@@ -19,7 +19,7 @@
         android:background="@android:color/darker_gray"
         android:clickable="true"
         android:scaleType="fitCenter"
-        android:src="@mipmap/tween_animtion"/>
+        android:src="@drawable/tween_animtion"/>
 
     <android.support.design.widget.FloatingActionButton
         android:layout_width="wrap_content"

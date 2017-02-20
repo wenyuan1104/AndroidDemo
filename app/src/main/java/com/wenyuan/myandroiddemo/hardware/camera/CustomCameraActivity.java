@@ -20,7 +20,7 @@ import android.widget.Toast;
 import com.wenyuan.myandroiddemo.BaseActivity;
 import com.wenyuan.myandroiddemo.R;
 import com.wenyuan.myandroiddemo.utils.AlertDialogV7Factory;
-import com.wenyuan.myandroiddemo.utils.ToastUtils;
+import com.wenyuan.myandroiddemo.utils.copy.ToastUtils;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -168,7 +168,7 @@ public class CustomCameraActivity extends BaseActivity implements SurfaceHolder.
     /**
      * 保存拍摄的图片保存到文件中
      *
-     * @param data
+     * @param bitmap
      */
     private String SavePotoToFile(Bitmap bitmap) {
         if (!Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState()))
@@ -254,7 +254,6 @@ public class CustomCameraActivity extends BaseActivity implements SurfaceHolder.
      * 切换摄像头
      *
      * @param i
-     * @param currentType
      */
     private void changeCameraType(int i) {
         mCamera.stopPreview();//停掉原来摄像头的预览
